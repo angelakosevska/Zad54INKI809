@@ -38,6 +38,28 @@ int main()
 {
 vector<covidMK*> vcmk; //definiranje na vektorot
 //8zapisi za gradovi od den 7.12
+vcmk.push_back(new covidMK( "Skopje", 188, 135));
+vcmk.push_back(new covidMK( "Kumanovo", 9, 9));
+vcmk.push_back(new covidMK( "Tetovo", 4, 1));
+vcmk.push_back(new covidMK( "Prilep", 35, 12));
+vcmk.push_back(new covidMK( "Bitola", 27, 18 ));
+vcmk.push_back(new covidMK( "Gostivar", 2, 7));
+vcmk.push_back(new covidMK( "Veles" , 8, 3));
+vcmk.push_back(new covidMK( "Kavadarci" , 35, 14));
 
+cout<<"***Pechatenje na podatocite*** "<<endl;
+cout<<setw(10)<<"GRAD"<<setw(10)<<"NOVI"<<setw(10)<<"OZDRAVENI"<<endl;
+for(const auto* c: vcmk)
+    {
+        cout <<setw(10)<<c->grad <<setw(10)<< c->novi <<setw(10)<< c->ozdraveni<<endl;
+    }
+cout<<endl<<"***Podatocite sortirani po broj na zaboleni***"<<endl;
+cout<<setw(10)<<"GRAD"<<setw(10)<<"NOVI"<<setw(10)<<"OZDRAVENI"<<endl;
+sort(vcmk.begin(), vcmk.end(), SortPointers());
+
+for(const auto* c: vcmk)
+{
+cout <<setw(10)<<c->grad<<setw(10)<< c->novi <<setw(10)<< c->ozdraveni<<endl;
+}
 
 }
