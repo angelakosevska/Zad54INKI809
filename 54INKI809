@@ -2,7 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include <vector>
-#include <algorithm>
+#include <algorithm> //za sort
 #include <fstream> //datotekata
 #include <iomanip> //za setw
 
@@ -63,7 +63,7 @@ cout <<setw(10)<<c->grad<<setw(10)<< c->novi <<setw(10)<< c->ozdraveni<<endl;
 }
 //vector vo nadvoreshen fajl
 ofstream outFile ("INKI809AngelaKjCovidMK.txt");
-for (const auto& q: vcmk) outFile<<q<<endl;
+for (const auto& q: vcmk) outFile<<q->grad<<"\t"<<q->novi<<"\t"<<q->ozdraveni<<endl;
 
 for(auto* c: vcmk)
 delete c;
